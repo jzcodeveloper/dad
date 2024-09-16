@@ -11,9 +11,15 @@ export const Gallery = async () => {
   return (
     <Box
       display="grid"
-      gridTemplateColumns="repeat(3, 1fr)"
+      gridTemplateColumns={{
+        xs: "repeat(1, 1fr)",
+        sm: "repeat(1, 1fr)",
+        md: "repeat(2, 1fr)",
+        lg: "repeat(3, 1fr)",
+        xl: "repeat(4, 1fr)",
+      }}
       gap={2}
-      padding={3}
+      padding={2}
     >
       {shuffle(imageFilenames).map((image: string) => (
         <Box key={image}>
